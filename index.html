@@ -7,8 +7,19 @@
 </head>
 <body>
   <h1>Firebase Test</h1>
-  <input type="text" id="msg">
-  <button id="add">Add</button>
+
+  <div class="chooseName">
+    <label>Your Name:</label>
+    <input type="text" id="name">
+    <button id="start">Start</button>
+  </div>
+
+  <div class="newMessage">
+    <label>Message:</label>
+    <input type="text" id="msg">
+    <button id="add">Add</button>
+  </div>
+
   <ul id="conversation"></ul>
   
   <script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
