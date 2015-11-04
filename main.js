@@ -29,7 +29,7 @@ $(document).ready(() => {
   // firebase listeners
   chatRef.on('child_added', (snapshot) => {
     var value = snapshot.val();
-    var $li = $('<li>').text(value.time + ' ' + value.name + ': ' + value.message);
+    var $li = $('<li>').text(value.time + ', ' + value.name + ': ' + value.message);
     $conversation.append($li);
   });
   usersRef.on('value', (snapshot) => {
@@ -84,9 +84,11 @@ $(document).ready(() => {
   function addMessage() {
     var message = $msg.val();
     $msg.val('');
+    let time = (new Date()).toTimeString().split(' ')[0]
+    let date = (new Date()).toDateString().split(' ').slice(1,3).join(' ');
     chatRef.push({
       name: name,
-      time: (new Date()).toTimeString().split(' ')[0],
+      time: time + ' ' + date,
       message: message
     });
     $msg.focus();
