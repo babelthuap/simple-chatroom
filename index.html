@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Firebase Test</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/cerulean/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div class="container">
+
   <h1>Firebase Test</h1>
 
   <div class="chooseName">
@@ -18,12 +22,19 @@
     <label>Message:</label>
     <input type="text" id="msg">
     <button id="add">Add</button>
+    <button id="logout">Logout</button>
   </div>
 
-  <ul id="conversation"></ul>
-  
-  <script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
-  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-  <script src="main.js"></script>
+  <div class="row log">
+    <div class="col-xs-12" id="username"></div>
+    <hr>
+    <div class="col-xs-8" id="conversation"><label for="conversation">Conversation:</label></div>
+    <div class="col-xs-4" id="users"><label for="users">Users:</label><div id="userlist"></div></div>
+  </div>
+
+</div>
+<script src='https://cdn.firebase.com/js/client/2.3.1/firebase.js'></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
